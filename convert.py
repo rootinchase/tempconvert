@@ -9,20 +9,20 @@ def main():
         temp_first = eval(input("What is the first temperature? "))
         #we now need to know what conversion they want
         print("What unit of temprature is this?")
-        unit = eval(input('Enter "C" for Celsius, or "F" for Fahrenheit')
-            if unit == "C"
-                    convert_celsius(temp_first)
+        unit = input('Enter "C" for Celsius, or "F" for Fahrenheit')
+        if unit == "C":
+                    temp_second = convert_celsius(temp_first)
                     print("The temperature is", temp_second, "degrees Fahrenheit.")
                     
-                elif unit == "F"
-                    #This is how it calls upon the conversion function for Fahrenheit
-                    temp_second = convert_fahrenheit(temp_first)
-                    #This outputs the converted user specified temprature
-                    print("The temperature is", temp_second, "degrees Celsius.")
+        elif unit == "F":
+            #This is how it calls upon the conversion function for Fahrenheit
+            temp_second = convert_fahrenheit(temp_first)
+            #This outputs the converted user specified temprature
+            print("The temperature is", temp_second, "degrees Celsius.")
                     
-                else
-                    print("Unsupported input, please try again.")
-                    x = x-1
+        else:
+            print("Unsupported input, please try again.")
+            x = x-1
 
 def convert_celsius(temp_first):
     #This function converts celsius to fahrenheit
