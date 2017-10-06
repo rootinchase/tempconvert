@@ -65,14 +65,14 @@ def convert_celsius_f(temp_input):
     temp_output = 9/5 * temp_input + 32
     return temp_output
 
-def convert_celsius_K(temp_input):
+def convert_celsius_k(temp_input):
     #This function converts celsius to kelvin
-    temp_output = temp_input - 273.15
+    temp_output = temp_input + 273.15
     return temp_output
 
 def convert_kelvin_c(temp_input):
     #This function converts kelvin to celsius
-    temp_output = temp_input + 273.15
+    temp_output = temp_input - 273.15
     return temp_output    
 
 
