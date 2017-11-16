@@ -7,52 +7,112 @@ def main():
     print("This program to convert temperatures between units")
     for x in range(5):
         # this gets the user specified temperature
-        temp_first = eval(input("What is the first temperature? "))
+        temp = eval(input("What is the first temperature? "))
         # we now need to know what conversion they want
         print("What unit of temperature is this in? ")
         print('Enter "C" for Celsius, or "F" for Fahrenheit,')
-        unit_current = input('or "K" for Kelvin: ')
+        unit_current = input('or "K" for Kelvin, or "R" for Rankine: ')
         # This is to select the final unit
         print('Using the same abbreviations as before,')
         unit_final = input("What do you want this in? ")
         unit_current = unit_current[0].upper()
         unit_final = unit_final[0].upper()
+
         if (unit_current == "C") and (unit_final == "F"):
             # This is how it converts Celsius to Fahrenheit
-            temp_second = convert_celsius_f(temp_first)
-            print("The temperature is", temp_second, "degrees Fahrenheit.")
+            temp = convert_celsius_f(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Fahrenheit.")
                     
         elif (unit_current == "F") and (unit_final == "C"):
-            # Celsius
-            temp_second = convert_fahrenheit_c(temp_first)
+            # Convert Fahrenheit to Celsius
+            temp = convert_fahrenheit_c(temp)
             # This outputs the converted user specified temperature
-            print("The temperature is", temp_second, "degrees Celsius.")
+            print("The temperature is", temp, "degrees Celsius.")
+
+        elif(unit_current == "R") and (unit_final == "F"):
+            # This is how it converts Fahrenheit to Kelvin
+            # It converts Rankine to Fahrenheit
+            temp = convert_rankine_f(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Kelvin")
+
+        elif (unit_current == "R") and (unit_final == "C"):
+            # This is how it converts Fahrenheit to Kelvin
+            # First It converts Rankine to Fahrenheit
+            temp = convert_rankine_f(temp)
+            # First It converts Fahrenheit to Celsius
+            temp = convert_fahrenheit_c(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Kelvin")
+
+        elif (unit_current == "R") and (unit_final == "K"):
+            # This is how it converts Fahrenheit to Kelvin
+            # First It converts Rankine to Fahrenheit
+            temp = convert_rankine_f(temp)
+            # First It converts Fahrenheit to Celsius
+            temp = convert_fahrenheit_c(temp)
+            # Then in converts Celsius to Kelvin
+            temp = convert_celsius_k(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Kelvin")
 
         elif (unit_current == "F") and (unit_final == "K"):
             # This is how it converts Fahrenheit to Kelvin
             # First It converts Fahrenheit to Celsius
-            temp_second = convert_fahrenheit_c(temp_first)
+            temp = convert_fahrenheit_c(temp)
             # Then in converts Celsius to Kelvin
-            temp_final = convert_celsius_k(temp_second)
-            print("The temperature is", temp_final, "degrees Kelvin")
+            temp = convert_celsius_k(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Kelvin")
 
         elif (unit_current == "C") and (unit_final == "K"):
             # This is how it converts Celsius to Kelvin
-            temp_second = convert_celsius_k(temp_first)
-            print("The temperature is", temp_second, "degrees Kelvin")
+            temp = convert_celsius_k(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Kelvin")
 
         elif (unit_current == "K") and (unit_final == "F"):
             # This is how it converts Kelvin to Fahrenheit
             # First It converts Kelvin to Celsius
-            temp_second = convert_kelvin_c(temp_first)
+            temp = convert_kelvin_c(temp)
             # Then in converts Celsius to Fahrenheit
-            temp_final = convert_celsius_f(temp_second)
-            print("The temperature is", temp_final, "degrees Fahrenheit.")
+            temp = convert_celsius_f(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Fahrenheit.")
+            
+        elif (unit_current == "K") and (unit_final == "R"):
+            # This is how it converts Kelvin to Rankine
+            # First It converts Kelvin to Celsius
+            temp = convert_kelvin_c(temp)
+            # Then in converts Celsius to Fahrenheit
+            temp = convert_celsius_f(temp)
+            # Finally it converts Fahrenheit to Rankine
+            temp = convert_fahrenheit_r(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Rankine.")
+
+        elif (unit_current == "C") and (unit_final == "R"):
+            # This is how it converts Celsius to Rankine
+            # First It converts Celsius to Fahrenheit
+            temp = convert_celsius_f(temp)
+            # Finally it converts Fahrenheit to Rankine
+            temp = convert_fahrenheit_r(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Rankine.")
+
+        elif (unit_current == "F") and (unit_final == "R"):
+            # This is how it converts Celsius to Rankine
+            # It converts Fahrenheit to Rankine
+            temp = convert_fahrenheit_r(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Rankine.")
             
         elif (unit_current == "K") and (unit_final == "C"):
             # This is how it converts Kelvin to Celsius
-            temp_second = convert_kelvin_c(temp_first)
-            print("The temperature is", temp_second, "degrees Celsius")
+            temp = convert_kelvin_c(temp)
+            # This outputs the converted user specified temperature
+            print("The temperature is", temp, "degrees Celsius")
 
         else:
             print("Unsupported input, please try again.")
