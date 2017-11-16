@@ -8,11 +8,11 @@ def main():
         #this gets the user specified temprature
         temp_first = eval(input("What is the first temperature? "))
         #we now need to know what conversion they want
-        print("What unit of temprature is this in?")
+        print("What unit of temprature is this in? ")
         print('Enter "C" for Celsius, or "F" for Fahrenheit,')
-        unit_current = input('or "K" for Kelvin')
+        unit_current = input('or "K" for Kelvin: ')
         #This is to select the final unit
-        print('Using the same codes,')
+        print('Using the same abbreveations as before,')
         unit_final = input("What do you want this in? ")
         if (unit_current == "C" or unit_current == "c") and (unit_final == "F" or unit_final == "f"):
             #This is how it converts Celsius to Fahrenheit
@@ -73,8 +73,17 @@ def convert_celsius_k(temp_input):
 def convert_kelvin_c(temp_input):
     #This function converts kelvin to celsius
     temp_output = temp_input - 273.15
-    return temp_output    
+    return temp_output
 
+def convert_rankine_f(temp intro):
+    #This function converts Rankine to Fahrenheit
+    temp_output = temp_input + 459.67
+    return temp_output
+
+def convert_fahrenheit_R
+    #This function converts fahrenheit to Rankine
+    temp_output = temp_input - 459.67
+    return temp_output
 
 def table():
     #this creates a table of celcius - fahrenheit conversions
