@@ -1,4 +1,4 @@
-# convert.py
+# convert_terminal.py
 # A program to convert temperatures
 # by: Ryan Chase
 
@@ -156,3 +156,4 @@ def convert_fahrenheit_r(imputed):
 
 # it's useless to have functions, and not call on them...
 main()
+
