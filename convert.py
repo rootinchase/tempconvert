@@ -1,4 +1,4 @@
-# convert.py
+# convert_terminal.py
 # A program to convert temperatures
 # by: Ryan Chase
 
@@ -106,4 +106,9 @@ def temp_convert_input():
 
 
 # it's useless to have functions, and not call on them...
+<<<<<<< HEAD:convert.py
 temp_convert_input()
+=======
+main()
+
+>>>>>>> 26e2a21827c9257d52b774761167b3870537eaa1:convert_terminal.py
